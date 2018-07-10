@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const demoRegEx = /Demographic[\r\n]*\-{32}([\s\S]*)\-{32}[\r\n]*Emergency/;
 const fieldRegEx = /(.*): (.*)/g;
