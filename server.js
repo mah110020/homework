@@ -9,11 +9,11 @@ http.createServer((req, res) => {
 
 	if( url === "/api/sample" && method === "GET"){
 
-		fs.readFile("api/sample.json", (error, contentBuff) => {
+		fs.readFile("api/sample.json", (readError, contentBuff) => {
 
-			if( error ){
-				res.statusCode = 200;
-				res.end( error.toString() );
+			if( readError ){
+				res.statusCode = 500;
+				res.end( readError.toString() );
 				return;
 			}
 
@@ -44,7 +44,7 @@ http.createServer((req, res) => {
 		new formidable.IncomingForm().parse(req, (formError, fields, files) => {
 
 			if( formError ){
-				res.statusCode = 200;
+				res.statusCode = 500;
 				res.end( formError.toString() );
 				return;
 			}
@@ -52,7 +52,7 @@ http.createServer((req, res) => {
 			fs.readFile( files.uploadfile.path, (readError, contentBuff) => {
 
 				if( readError ){
-					res.statusCode = 200;
+					res.statusCode = 500;
 					res.end( readError.toString() );
 					return;
 				}
@@ -60,7 +60,7 @@ http.createServer((req, res) => {
 				const parsedContents = parse( contentBuff.toString() );
 
 				fs.writeFile("post.json", parsedContents, writeError => {
-					res.statusCode = 200;
+					res.statusCode = 500;
 					res.end( writeError ? writeError.toString() : "success" );
 				});
 
