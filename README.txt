@@ -2,7 +2,7 @@
 
 ### How to test this project ###
 
-0) download & install node:
+0) download & install node (this project was tested on v10.5.0):
 	https://nodejs.org/en/download/
 
 1) navigate to the folder containing "README.txt".
