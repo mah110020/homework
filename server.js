@@ -57,10 +57,18 @@ http.createServer((req, res) => {
 					return;
 				}
 
-				const parsedContents = parse( contentBuff.toString() );
+				let parsedContents;
+
+				try {
+					parsedContents = parse( contentBuff.toString() );
+				} catch( parseError ){
+					res.statusCode = 500;
+					res.end( parseError.toString() );
+					return;
+				}
 
 				fs.writeFile("post.json", parsedContents, writeError => {
-					res.statusCode = 500;
+					res.statusCode = writeError ? 500 : 200;
 					res.end( writeError ? writeError.toString() : "success" );
 				});
 
