@@ -5,7 +5,7 @@
 0) download & install node:
 	https://nodejs.org/en/download/
 
-1) navigate to this folder.
+1) navigate to the folder containing "README.txt".
 
 2) install dependencies:
 	"npm install"
