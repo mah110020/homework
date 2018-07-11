@@ -10,14 +10,15 @@
 2) install dependencies:
 	"npm install"
 
-3) test part 1:
+3) test "Part 1: Parsing Data":
 	"npm run test1"
 
 4) run server:
 	"npm start"
 
-5) test part 2:
+5) test "Part 2: API":
 	navigate your browser to http://localhost:4000/api/sample
 
-6) test part 3:
+6) test "Part 3: Ingest and Parse Data":
 	navigate your browser to http://localhost:4000/api/parse
+	"post.json" will be saved in the current directory
