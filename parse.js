@@ -1,8 +1,7 @@
-const fs = require("fs");
-
 const demoRegEx = /Demographic[\r\n]*\-{32}([\s\S]*)\-{32}[\r\n]*Emergency/;
 const fieldRegEx = /(.*): (.*)/g;
 
+// parse contents, format, and return JSON string
 function parse( contents ){
 	const data = demoRegEx.exec(contents)[1];
 	const demoObj = {};
@@ -38,11 +37,4 @@ function format( demoObj ){
 	};
 }
 
-fs.readFile("cms_sample.txt", (error, contentBuff) => {
-	if( error ){
-		console.log(error.toString());
-	} else {
-		const contents = contentBuff.toString();
-		console.log(parse(contents));
-	}
-});
+module.exports = parse;
