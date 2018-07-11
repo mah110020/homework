@@ -1,0 +1,20 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "amida-tech homework",
+  "main": "server.js",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mah110020/homework"
+  },
+  "author": "mattH",
+  "license": "ISC"
+}
